@@ -9,7 +9,7 @@ SESSION_STRING = os.environ.get('SESSION_STRING0')
 client = TelegramClient(StringSession(SESSION_STRING), api_id, api_hash)
 @client.on(events.NewMessage)
 async def my_event_handler(event):
-        if event.chat.username in int(list_all):
+        if event.chat.username in list_all:
                 chat = await event.get_input_chat()
                 msg = await client.get_messages(chat.channel_id, limit=1)
                 await client.forward_messages(int(account[2]), msg)
