@@ -4,7 +4,8 @@ import os
 from pars_conf import account, list_all
 api_id = os.environ.get('apiid0')
 api_hash = os.environ.get('api_hash0')
-client = TelegramClient('my_account', api_id, api_hash)
+SESSION_STRING = os.environ.get('SESSION_STRING0')
+client = TelegramClient('my_account', StringSession(SESSION_STRING), api_id, api_hash)
 @client.on(events.NewMessage)
 async def my_event_handler(event):
         if event.chat.username in list_all:
