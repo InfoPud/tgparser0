@@ -1,4 +1,5 @@
 # coding-utf-8
+from telethon.sessions import StringSession
 from telethon import TelegramClient, events
 import os
 from pars_conf import account, list_all
