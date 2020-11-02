@@ -7,7 +7,7 @@ api_id = os.environ.get('apiid0')
 api_hash = os.environ.get('api_hash0')
 SESSION_STRING = os.environ.get('SESSION_STRING0')
 client = TelegramClient(StringSession(SESSION_STRING), api_id, api_hash)
-@client.on(events.NewMessage(chats='my_account'))
+@client.on(events.NewMessage)
 async def my_event_handler(event):
         if event.chat.username in list_all:
                 chat = await event.get_input_chat()
@@ -15,4 +15,4 @@ async def my_event_handler(event):
                 await client.forward_messages(int(account[2]), msg)
                 print("busted")
 client.start()
-client.run_until_disconnected()
+client.run_until_disconnected() 
