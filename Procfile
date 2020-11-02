@@ -1,1 +1,1 @@
-web: tg_pars.py
+run: python tg_pars.py
