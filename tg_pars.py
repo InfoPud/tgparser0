@@ -5,7 +5,8 @@ import os
 from pars_conf import account
 api_id = os.environ.get('apiid0')
 api_hash = os.environ.get('api_hash0')
-list_all = [os.environ.get('list_all0')]
+list_all10 = os.environ.get('list_all0')
+list_all = [list_all10]
 SESSION_STRING = os.environ.get('SESSION_STRING0')
 client = TelegramClient(StringSession(SESSION_STRING), api_id, api_hash)
 @client.on(events.NewMessage)
